@@ -115,9 +115,6 @@ plt.savefig('hist_paralax.png',dpi=100,format='png')
 
 # In[ ]:
 
-
-
-
 # In[31]:
 
 #df0['parallax'].hist(bins=2, range=[df0['parallax'].min(), -0], figsize=(25,8))
@@ -138,13 +135,12 @@ L0 = (32*60*60 + 55*60 + 54.905)/3600
 
 
 x0 = [(np.arctan2((np.sin(y*np.pi/180)*np.sin(i*np.pi/180)+ np.cos(y*np.pi/180)*np.cos(i*np.pi/180)*np.sin((x - ome)*np.pi/180)), (np.cos(y*np.pi/180)*np.cos((x- ome)*np.pi/180)))/np.pi*180 + L0) for y,x in zip(df0['dec'],df0['ra']) ]
-# if ((np.arctan((np.sin(y*np.pi/180)*np.sin(i*np.pi/180) + np.cos(y*np.pi/180)*np.cos(i*np.pi/180)*np.sin((x - ome)*np.pi/180)) / (np.cos(y*np.pi/180)*np.cos((x - ome)*np.pi/180)))/np.pi*180 + L0) < 180) else (np.arctan((np.sin(y*np.pi/180)*np.sin(i*np.pi/180) + np.cos(y*np.pi/180)*np.cos(i*np.pi/180)*np.sin((x - ome)*np.pi/180)) / (np.cos(y*np.pi/180)*np.cos((x - ome)*np.pi/180)))/np.pi*180 + L0 - 360)
 y0 = [np.arcsin(np.sin(y*np.pi/180)*np.cos(i*np.pi/180) - np.cos(y*np.pi/180)*np.sin(i*np.pi/180)*np.sin(x*np.pi/180 - ome*np.pi/180))/np.pi*180 for y,x in zip(df0['dec'],df0['ra'])]
 x0 = [x if x<180 else x - 360 for x in x0]
 
 
 # In[41]:
-
+'''
 plt.figure()
 ax = plt.subplot(111)
 ax.hist(df0.l-x0,bins=1000)
@@ -154,7 +150,7 @@ ax.hist(df0.l-x0,bins=1000)
 print(max(df0.l-x0)*60*60)
 print(min(df0.l-x0)*60*60)
 print(0.001/60/60/180*np.pi)
-
+'''
 
 #df0.hist('l', bins=100)
 #df0.hist('b', bins=100)
