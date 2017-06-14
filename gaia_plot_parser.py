@@ -371,5 +371,8 @@ ax.axis('off')
 
 
 # In[ ]:
-
+from mpmath import mp
+f = lambda x1, x2: mp.cos(x1)/x2
+mp.dps = 100
+print(mp.quad(f,[0,1],[10,mp.inf]))
 
