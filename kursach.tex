@@ -1,72 +1,124 @@
-\documentclass[14pt,a4paper,russian]{article}
-% \documentclass[14pt,a4paper]{extarticle}
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[14pt]{article} % use larger type; default would be 10pt
 \usepackage[14pt]{extsizes}
-\usepackage[utf8]{inputenc} 
-\usepackage[T2A]{fontenc} % before babel!
-\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage[T2A]{fontenc}  %поддержка кириллицы в ЛаТеХ
+
 \usepackage[titletoc]{appendix}
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{left=30mm, top=20mm, bottom=20mm, right=15mm} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage[final]{graphicx} % support the \includegraphics command and options
+\usepackage{epstopdf}
+\let\bibsection\relax
 \usepackage{amsmath}
+
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+
+%%% PACKAGES
+\usepackage{amsfonts} %for \mathbb
 \usepackage{amssymb}
-\usepackage{bm}
-\usepackage{babel,blindtext}  
+\usepackage{dsfont}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage[english, russian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{euscript}
+\usepackage{caption}
+\usepackage{pbox}
+\usepackage[square,numbers]{natbib}
+\setcitestyle{authoryear, open={[},close={]}}
+% These packages are all incorporated in the memoir class to one degree or another...
+%\usepackage{tempora}
+\let\bibhang\relax
+\let\citename\relax
+\let\bibfont\relax
+\let\Citeauthor\relax
+\let\bibsection\relax
+\expandafter\let\csname ver@natbib.sty\endcsname\relax
 \usepackage[backend=bibtex,style=numeric]{biblatex}  %backend=biber is 'better'  
 
-
-%\usepackage{polyglossia}
-
-
-\usepackage{caption}
-\usepackage{color}
-\usepackage{epigraph}
-\usepackage{epsfig}
-\usepackage{enumitem}
-\usepackage{float}
-\usepackage{textcomp}
-\usepackage{gensymb}
-\usepackage{graphicx}
-\usepackage{hyperref}   
-\usepackage{mathtools}
-\usepackage{lipsum}
-\usepackage{indentfirst,latexsym}
-\usepackage{physics}
-\usepackage{setspace}
-\usepackage{subcaption}
+\addbibresource{kursach.bib}
 
 \graphicspath{{img/}}
 
-\addbibresource{kursach.bib}
-%\selectlanguage{russian}
+\usepackage{amsmath}
+\usepackage{amstext}
+%\usepackage{amssymb}
+%\usepackage{bm}
+%\usepackage{caption}
+%\usepackage{color}
+%\usepackage{epigraph}
+%\usepackage{epsfig}
+%\usepackage{float}
+%\usepackage{gensymb}
+%\usepackage{graphicx}
+%\usepackage{hyperref}   
+%\usepackage{mathtools}
+%\usepackage{lipsum}
+%\usepackage{indentfirst,latexsym}
+%\usepackage{physics}
+%\usepackage{setspace}
+%\usepackage{subcaption}
 
-\onehalfspacing
+%\onehalfspacing
 
-%\usepackage{fontspec}
-%\usepackage{polyglossia}
-%\setmainfont[Ligatures=TeX]{cmunrm.otf}
-%% \setmainfont[Ligatures=NoCommon]{Times New Roman}
-%\setmainlanguage{russian}
-%\setotherlanguage{english}
-%\newfontfamily\cyrillicfonttt{lmmonolt10-bold.otf}
+\usepackage{xspace}
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+%\usepackage{sectsty}
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+\linespread{1.5}
+
+\usepackage{indentfirst}
+
+%%% END Article customizations
 
 
-%% \newcommand{\be}{\begin{equation}}
-%% \newcommand{\ee}{\end{equation}}
-%% newcommand{\df} {\mathop{}\!\mathrm{d}}
 
-
-\textheight 25.7cm % 29.7-2-2=25.7
-\textwidth 17cm % 21-2.5-1.5=17.0
-\hoffset -0.04cm %2.5-2.54=-0.04 слева 3см
-\voffset -1.04cm %2-2.54=0.54 сверху 2см
-\oddsidemargin 0cm
-\headheight 0cm
-\headsep 0cm
-\topmargin 0cm
-\setcounter{page}{1}
+%\textheight 25.7cm % 29.7-2-2=25.7
+%\textwidth 17cm % 21-2.5-1.5=17.0
+%\hoffset -0.04cm %2.5-2.54=-0.04 слева 3см
+%\voffset -1.04cm %2-2.54=0.54 сверху 2см
+%\oddsidemargin 0cm
+%\headheight 0cm
+%\headsep 0cm
+%\topmargin 0cm
+%\setcounter{page}{1}
 \def\sigspace{\\[1em]
 \underline{\hspace{5cm}}\\[-0.2em]}
-
-
-
 
 \begin{document}
 
@@ -95,9 +147,9 @@
 	{
 		 \begin{flushright}
 			Научный руководитель:\\
-		    доцент А.С.\,Цветков\sigspace
+		    доцент А.С.\,Цветков \sigspace
 		    Рецензент:\\
-		    PhD. З.М.\,Малкин\sigspace
+		    PhD. З.М.\,Малкин \sigspace
 		\end {flushright}
 	}
 
@@ -136,7 +188,7 @@
 	{
 		 \begin{flushright}
 			Scientific supervisor:\\
-		    associate professor Alexander Tsvetkov\sigspace
+		    associate professor Alexander Tsvetkov \sigspace
 		    Reviewer:\\
 		    PhD. Zinovy Malkin \sigspace
 		    
@@ -147,8 +199,8 @@
 	\begin{center}
 	\small {Saint-Petersburg
 
-	2018}
-	\end{center}
+	2018}	
+\end{center}
 \end{titlepage}
 \newpage
 \tableofcontents
@@ -177,9 +229,58 @@
 \subsection{Выборка}\label{sub:smthzd}
 Благодаря тому, что у каждой звезд в каталоге TGAS есть идентификатор из каталога Hipparcos (в противном случае из каталога Tyho-2), мы можем объединить данные по этим звездам с данными из каталога Hipparcos. Таким образом в объединённом каталоге будут данные из каталога XHIP и TGAS. В каталоге XHIP 117955 объектов. В TGAS 2057050. их объединении по звездам-- 93635, из котрых пригодны для анализа тригонометрических параллаксов  90283.
 
-Перечислим интересующие нас поля из каждого каталога
 
-			 
+Перечислим интересующие нас поля из каждого каталога XHIP:
+
+\begin{itemize}
+
+\item $id$ - идентификатор звезды в каьалогк Hipparcos
+
+\item $\pi_{xhip}$ - абсолютный барцентрический параллакс звезды на момент эпохи каталога, указано в mas
+
+\item $\delta_{\pi_{xhip}}$ - стандартное отклонение параллаксов звезды на момент эпохи каталога, указано в mas
+
+\end{itemize}
+
+Из каталога TGAS нас интересуют следующие поля
+
+\begin{itemize}
+
+\item $hip$ - идентификатор звезды в каталоге Hipparcos
+
+\item $\pi_{tgas}$ - абсолютный барцентрический параллакс звезды на момент эпохи каталога, указано в mas
+
+\item $\delta_{\pi_{tgas}}$ - стандартное отклонение параллаксов звезды на момент эпохи каталога, указано в mas
+
+\item $ra$ - экваториальна долгота на момент эпохи каталога, указано в градусах
+
+\item $dec$ - экваториальна широты на момент эпохи каталога, указано в градусах
+
+\item $l$ - галактическая долгота на момент эпохи каталога, указано в градусах
+
+\item $b$ - галактическая широты на момент эпохи каталога, указано в градусах
+
+\item $lon$ - эклиптическая долгота на момент эпохи каталога, указано в градусах
+
+\item $lat$ - эклипическая широты на момент эпохи каталога, указано в градусах
+
+\end{itemize}
+
+\section{Построение и анализ разностей паралаксов}\label{errvid}
+<Переписать>
+Астрометрические каталоги за долгую историю сравнивали  всегда между собой с целью выявления случайных и особенно систематических ошибок на координаты и собственные движения. Впервые в истории появляется возможность сравнить параллаксы, полученные тригонометрическим способом для стоолько большого колличества звезд. К сожалению, параллаксы XHIP и TGAS  не являются независимыми величинами. Корректную процедуру сравнения удается сделать лишь после вызода покрайней мере GAIA DR2 (ссылка?), где параллаксы будут получены независимо от данных Hipparcos.
+
+РАссмотрим для каждой звезды общего каталога величину разности параллаксов в XHIP и в TGAS, т.е. $\pi_{xhip} - \pi_{tgas}$. Ошибкой разности, соответственно, будем считать $\sqrt{\delta^2_{\pi_{xhip}} + \delta^2_{\pi_{tgas}}}$. Для начала выпишем различные статистические характеристики данной величины. СРеднее значение - 0.35 mas, Медиана 0.29, Стандартное отклонение -- 1.5 mas, Среднее значение подуля -- 1.04 mas, Медиана модуля - 0.76 mas, 99 персентиль модуля - 4.78 mas. 
+
+Обычно систематические разности положений и собственных движений изучают в эквивалентной, в силу зонного построения каталогов, или гfлактической системе для массивных звездных каталогов, в котрых распределение звезд в этой системе симметрично (ссылка на работы витязева и цветкова?). Первое знакомство с систематическими разностями параллаксов (пир 4), показывает.что присутствует имметрия разностей относительно эклиптики.
+
+Боллее того, мы видим зависимость между модулем разности параллаксов на рис.4 и ошибкой параллаксов в XHIP на рис.6  в эклиптической системе координат. Действительно, коэффицент корреляции между этими величинами на звездах объего каталога равен 0.55. Это говорит о том, что чем выше ошибка параллаксоа XHIP, тем ссильнее он отличается от параллакса TGAS.
+
+\section{Анализ больших выборосов}\label{errvid}
+Рассмотрим звезды у которых параллаксы в XHIP и TGAS  значимо различаются, а именно, у которых модуль разности параллаксов больше, чем 3 ошибки этой разности. Таких звезд 2148. Выясним, с чем связаны такие отличия в параллаксах. У таких звезд поэффициент корреляции моуля разности параллаксов с ошибкой параллакса в XHIP равен 0.87, а с ошибкой в TGAS -- 0.1. Т.е. можно утверждать. что большая разница медлу параллаксами обусловленна большими ошибками параллаксов именно в XHIP/ Явно ошибочными являются параллаксы меньше 0, т.е. этотакие паралаксы $\pi$ , что $\pi < -3\delta_{\pi}$. В TGAS таких звезд всего 6, а в XHIP - 17. Т.е. подобного рода выбросы не должны сильно влиять на усредненные характеристики разности параллаксов XHIP и TGAS.
+
+
+
 \section{Случайные выбросы}\label{errvid}
 
 \subsection{Проекция Хаммера}\label{sub:smthrs}
@@ -201,8 +302,23 @@ $$ \varphi = \arcsin zy $$
 \subsection{Распределение}\label{sub:smthrs}
 Тут мой супер классный диплом
 
+и супер классные картиновчки и гистограмки
+
+
+\section{Анализ разностей с помощью сферических функций}\label{sistem}
+ На рис.4 мы видим явную зависимость в распределении модуля отличия параллаксов по небесной сфере от модуля эклиптической широты (коэффецент корреляции равен -0.7).  Подтвердить статистическую значимость данной зависимости и незначимость прочих менее оччевидных зависимостей мы можем с помощью представления пмодуля разностей параллаксов через сферические функции. Сферические функции широко используются в различных областях математики и физики, их определение можно найти во многих источниках (см., например, Арфкен, 1970). Впервые  были использованы для анализа систематических разностей положений и собственных движений (броше 1977). Мы впервые используем этот инструмент для анализа систематических разностей параллаксов.
+ 
+Представление модуля разницы параллаксов с помощью линейной комбинации сферических функций можно записать следующим образом.
+
+$$ \Delta_{plx} (l,b) = \sum_{nkp}\delta_{nkp}K_{nkp}(l,b) $$,
+где сферические функции имеют вид (Арфкен, 1970):
+
+$$ K_{nkp}(l,b) = R_{nk} $$
+
+
 \section{Систематические различия}\label{sistem}
 		
+
 \subsection{Healpix}\label{sub:smthhealpix}
 HEALPix -- это абревиатура \textbf{H}ierarchical \textbf{E}qual \textbf{A}rea iso\textbf{L}atitude \textbf{Pix}elation of a sphere (Иерархическая равная изоляционная площадь пикселей). 
 
