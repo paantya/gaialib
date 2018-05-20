@@ -283,6 +283,7 @@ $http://www.astronet.ru/db/msg/1210304/node2.html$
 
 
 
+
 \section{Случайные выбросы}\label{errvid}
 
 \subsection{Проекция Хаммера}\label{sub:smthrs}
@@ -312,11 +313,34 @@ $$ \varphi = \arcsin zy $$
  
 Представление модуля разницы параллаксов с помощью линейной комбинации сферических функций можно записать следующим образом.
 
+
 $$ \Delta_{plx} (l,b) = \sum_{nkp}\delta_{nkp}K_{nkp}(l,b) $$,
 где сферические функции имеют вид (Арфкен, 1970):
 
-$$ K_{nkp}(l,b) = R_{nk} $$
+\begin{equation}
+K_{nkp}(l,b) = R_{nk} \left\{ \begin{array}{ll}
+P_{n,0}(b), & \textrm{$k=0, p=1$,}\\
+P_{n,k}(b)\sin{kl}, & \textrm{$k\neq0, p=0$,}\\
+P_{n,k}(b)\cos{kl}, & \textrm{$k\neq0, p=1$,}
+\end{array} \right.
+\end{equation}
 
+\begin{equation}
+R_{nk} = \sqrt[]{\frac{2n+1}{4\pi}} \left\{ \begin{array}{cc}
+\sqrt[]{\frac{2(n-k)!}{(n+k)!}}, & \textrm{$k>0$,}\\
+1, & \textrm{$k=0$,}
+\end{array} \right.
+\end{equation}
+
+\begin{equation}
+\begin{array}{ll}
+P_{nk}(b)=\sin{b\frac{2n-1}{n-k}}P_{n-1,k}(b)-\frac{n+k-1}{n-k}P_{n-2,k}(b),{}^{k=0,1,...}_{n=k+1,k+2,...}\\
+P_{kk}(b)=\frac{(2k)!}{2^{k}k!}{\cos{b}}^{k}\\
+P_{k+1,k}(b)=\frac{(2k+2)!}{2^{k+1}(k+1)!}{\cos{b}}^{k}\sin{b}
+\end{array}
+\end{equation}
+
+rtr
 
 \section{Систематические различия}\label{sistem}
 		
