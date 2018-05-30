@@ -19,7 +19,7 @@
 %boxes,default,EastLansing
 %Luebeck,Madrid,Szeged
 \usetheme{EastLansing} 
-%AnnArbor
+%AnnArbor,Boadilla,EastLansing
 
 %albatross,
 %beaver, beetle, crane, dolphin, dove, fly, lily, orchid, rose, seagull, seahorse, sidebartab,
@@ -82,6 +82,11 @@
 \begin{equation}
     Русский_{низ}^{вверх} = \frac{всё}{работает^2\dots} = E = m c^2
 \end{equation}
+
+\begin{block}{Introduction to {\LaTeX}}
+"Beamer is a {\LaTeX}class for creating presentations that
+are held using a projector..."
+\end{block}
 \end{frame}
 
 
@@ -92,8 +97,12 @@
  	\begin{columns}
  		\column{0.5\textwidth}
  			Содержимое левого столбца
+ 			
+ 			- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  		\column{0.5\textwidth}
  			Содержимое правого столбца
+ 			
+ 			- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
  	\end{columns}
 \end{frame}
 
@@ -114,25 +123,85 @@ Frame body text and/or \LaTeX code\\
 
 \subsection{Визуализация распределения}\label{sub:smthrs}
 \begin{frame}[<alignment>]
-\frametitle{Frame Title Goes Here}
-Frame body text and/or \LaTeX code\\
+%\frametitle{Визуализация распределения}
 
-Гомоморфный образ группы
-изоморфен фактор-группе
-по ядру гомоморфизма
+\begin{figure}[H]
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{hiptgasra}} a) \\
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{hiptgasl}} b) \\
+\end{minipage}
+\vfill
+\begin{minipage}[h]{0.47\linewidth}
+\center{\includegraphics[width=1\linewidth]{hiptgaslo}} c) \\
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.47\linewidth}
+Распределение звезд в каталоге HIP.\\
+a)В экваториальной СК, b)В галактической СК, c)В эклиптической СК.
+\end{minipage}
+%\caption{}
+\label{ris:experimentalcorrelationsignals}
+\end{figure}
 
 \end{frame}	
+
+\begin{frame}[<alignment>]
+%\frametitle{Визуализация распределения}
+\begin{figure}[h!]
+\center{\includegraphics[width=1.\linewidth]{hiptgasra}}
+\caption{Распределение в экваториальной СК}
+\label{img:hiptgasra}
+\end{figure}
+\end{frame}	
+
+\begin{frame}[<alignment>]
+%\frametitle{Визуализация распределения}
+\begin{figure}[h!]
+\center{\includegraphics[width=1.\linewidth]{hiptgasl}}
+\caption{Распределение в галлактической СК}
+\label{img:hiptgasl}
+\end{figure}
+\end{frame}	
+
+\begin{frame}[<alignment>]
+%\frametitle{Визуализация распределения}
+\begin{figure}[h!]
+\center{\includegraphics[width=1.\linewidth]{hiptgaslo}}
+\caption{Распределение в эклиптической СК}
+\label{img:hiptgaslo}
+\end{figure}
+\end{frame}	
+
 
 
 \subsection{Построение и предварительный анализ}\label{errvid}
 
-\begin{frame}[c]
-\frametitle{Frame Title Goes Here}
-df
-\begin{block}{Introduction to {\LaTeX}}
-"Beamer is a {\LaTeX}class for creating presentations that
-are held using a projector..."
-\end{block}
+\begin{frame}[squeeze, shrink=5]
+\frametitle{Построение и предварительный анализ}
+\begin{table}[h!]
+%\centering
+\caption{Визуал. Общ. стат. по объединённому каталогу}
+\label{tabular:tgas_st}
+\begin{tabular}{c|r|r|r|r|r|r|r}
+%\rowcolor{Gray} 
+\hline 	
+&$\pi_{tgas}$&$\pi_{hip}$&$\pi_{dif}$&$\pi_{dif_{abs}}$&$\delta_{\pi_{tgas}}$&$\delta_{\pi_{hip}}$&$n_{obs}$\\
+\hline
+\hline 	
+count&90283&90283&90283&90283&90283&90283&90283\\
+\hline 
+mean&6.812&7.02&0.21&1.07&0.33&1.05&117.48\\
+std&8.564&8.64&1.71&1.35&0.13&0.82&42.86\\
+min&0.002&0.01&-42.35&5.4e-07&0.20&0.09&20\\
+25\%&2.506&2.67&-0.61&0.35&0.24&0.68&86\\
+50\%&4.369&4.66&0.14&0.77&0.28&0.91&113\\
+75\%&7.984&8.33&0.93&1.40&0.35&1.21&140\\
+max&295.8&298.0&90.05&90.05&0.99&47.48&388\\
+\end{tabular}
+\end{table}
 
 \end{frame}	
 
@@ -141,16 +210,54 @@ are held using a projector..."
 \begin{frame}[<alignment>]
 \frametitle{Случайные выбросы}
 
-
 \begin{figure}[h!]
-\center{\includegraphics[width=0.7\linewidth]{75maxlonlat}}
-\label{img:75maxlonlat}
+\center{\includegraphics[width=.7\linewidth]{abs_paralax}}
+\caption{График убывания модуля разностей параллаксов.}
+%\label{img:abs_paralax}
 \end{figure}
 
+\end{frame}
+
+\begin{frame}[<alignment>]
+%\frametitle{Случайные выбросы}
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1.\linewidth]{75maxradec}}
+\caption{Распределение рекордсменов в экваториальной СК  Красные - положительные, синие - отрицательные.}
+%\label{img:75maxradec}
+\end{figure}
+\end{frame}
+
+\begin{frame}[<alignment>]
+%\frametitle{Случайные выбросы}
+\begin{figure}[h!]
+\center{\includegraphics[width=1.\linewidth]{75maxlb}}
+\caption{Распределение рекордсменов в галактической СК Красные - положительные, синие - отрицательные.}
+\label{img:75maxlb}
+\end{figure}
+\end{frame}
+
+\begin{frame}[<alignment>]
+%\frametitle{Случайные выбросы}
+\begin{figure}[h!]
+\center{\includegraphics[width=1.\linewidth]{75maxlonlat}}
+\caption{Распределение рекордсменов в эклиптической СК Красные - положительные, синие - отрицательные.}
+\label{img:75maxlonlat}
+\end{figure}
 \end{frame}	
 
 
 \section{Систематические различия}\label{sistem}
+
+\begin{frame}[<alignment>]
+%\frametitle{}
+\begin{figure}[h!]
+\center{\includegraphics[width=.87\linewidth]{hist_par_deff}}
+\caption{Гистограмма разности параллаксов.}
+\label{img:hist_par_deff}
+\end{figure}
+\end{frame}
+
 \subsection{Healpix}\label{sub:smthhealpix}
 \begin{frame}[<alignment>]
 %\frametitle{Healpix}
