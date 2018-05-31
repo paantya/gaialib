@@ -28,25 +28,26 @@
 
 \beamersetuncovermixins{\opaqueness<1>{30}}{\opaqueness<2->{25}}
 
-%\setbeamerfont{frametitle}{series=\bfseries}
-%\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
 
-%\makeatletter
-%\defbeamertemplate*{footline}{my theme}{
-%	\leavevmode%
-%	\hbox{%
-%	\begin{beamercolorbox}[wd=.205\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-%		\usebeamerfont{author in head/foot}%
-%		\insertshortauthor~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
-%	\end{beamercolorbox}%
-%	\begin{beamercolorbox}[wd=.605\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-%		\usebeamerfont{title in head/foot}\inserttitle
-%	\end{beamercolorbox}%
-%	\begin{beamercolorbox}[wd=.19\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
-%		\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{.3em}	\insertframenumber{}/\inserttotalframenumber\hspace*{1ex}
-%	\end{beamercolorbox}}%
-%}
-%\makeatother
+\makeatletter
+\defbeamertemplate*{footline}{my theme}{
+	\leavevmode%
+	\hbox{%
+	\begin{beamercolorbox}[wd=.205\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+		\usebeamerfont{author in head/foot}%
+		\insertshortauthor~\beamer@ifempty{}{}{(\insertshortinstitute)}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=.605\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+		\usebeamerfont{title in head/foot}\inserttitle
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=.19\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+		%\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{.3em}	
+\insertframenumber{}/\inserttotalframenumber\hspace*{1ex}
+	\end{beamercolorbox}}%
+}
+\makeatother
 
 
 
@@ -55,7 +56,7 @@
 \subtitle[Диплом]{Дипломная работа}
 %\subtitle[short subtitle]{long subtitle}
 \author[А.С.\,Патшин]{Патшин Антон Сергеевич\\{\footnotesize\textcolor{gray}{научный руководитель: доцент А.С.\,Цветков}}}
-\date{\today} 
+%\date{\today} 
 
 
 %\title[short title]{long title}
@@ -108,62 +109,6 @@ are held using a projector..."
 
 \section{Данные}\label{sub:smthzd}
 \subsection{Проекция Хаммер-Айтофа}\label{sub:hammer}
-\begin{frame}[<alignment>]
-\frametitle{Разработка велась с помощью следующих инструментво}
-
-\begin{figure}[H]
-\begin{minipage}[h]{0.13\linewidth}
-\center{\includegraphics[width=0.7\linewidth]{c_logo}} 
-\end{minipage}
-\hfill
-\begin{minipage}[h]{0.13\linewidth}
-\center{\includegraphics[width=.5\linewidth]{ISO_C++_Logo}} 
-\end{minipage}
-\hfill
-\begin{minipage}[h]{0.23\linewidth}
-\center{\includegraphics[width=.7\linewidth]{fortran}} 
-\end{minipage}
-\hfill
-\begin{minipage}[h]{0.23\linewidth}
-\center{\includegraphics[width=.5\linewidth]{python}} 
-\end{minipage}
-
-\vfill
-\begin{minipage}[h]{0.31\linewidth}
-\center{\includegraphics[width=0.7\linewidth]{IPy_header}} 
-\end{minipage}
-\hfill
-\begin{minipage}[h]{0.31\linewidth}
-\center{\includegraphics[width=.5\linewidth]{jupyter_logo}} 
-\end{minipage}
-\hfill
-\begin{minipage}[h]{0.31\linewidth}
-\center{\includegraphics[width=.5\linewidth]{Anaconda_Logo}} 
-\end{minipage}
-
-\vfill
-\begin{minipage}[h]{0.31\linewidth}
-\center{\includegraphics[width=0.5\linewidth]{numpy_logo}} 
-\end{minipage}
-\hfill
-\begin{minipage}[h]{0.31\linewidth}
-\center{\includegraphics[width=.85\linewidth]{pandas_logo}} 
-\end{minipage}
-\hfill
-\begin{minipage}[h]{0.31\linewidth}
-\center{\includegraphics[width=.5\linewidth]{scipy}} 
-\end{minipage}
-\vfill
-
-\begin{minipage}[h]{0.7\linewidth}
-\center{\includegraphics[width=.5\linewidth]{nplotlib_logos2}} 
-\end{minipage}
-%\caption{инстуременты разработки}
-%\label{ris:experimentalcorrelationsignals}
-\end{figure}
-
-
-\end{frame}	
 
 
 \subsection{Визуализация распределения}\label{sub:smthrs}
@@ -339,14 +284,98 @@ d;e[
 \frametitle{Заключение}
 Звезды по HIP ближе на $6\%$.
 
+Мы получили очень важные и нужные результаты. в виде разложения на гармоники.\\
 
+Спасибо за внимание!
 \end{frame}	
 
 
-\section{Список использованной литературы}\label{conclusionlit}
+%\setcounter{framenumber}{0} %or \setcounter{framenumber}{1}
+
+%\setcounter{framenumber}{\value{finalframe}}
+\appendix
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+\begin{frame}
+
+\frametitle{Инструменты которыми, пользовались в исследования}
+\begin{figure}[H]
+\begin{minipage}[h]{0.13\linewidth}
+\center{\includegraphics[width=0.7\linewidth]{c_logo}} 
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.13\linewidth}
+\center{\includegraphics[width=.5\linewidth]{ISO_C++_Logo}} 
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.23\linewidth}
+\center{\includegraphics[width=.7\linewidth]{fortran}} 
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.23\linewidth}
+\center{\includegraphics[width=.5\linewidth]{python}} 
+\end{minipage}
+
+\vfill
+\begin{minipage}[h]{0.31\linewidth}
+\center{\includegraphics[width=0.7\linewidth]{IPy_header}} 
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.31\linewidth}
+\center{\includegraphics[width=.5\linewidth]{jupyter_logo}} 
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.31\linewidth}
+\center{\includegraphics[width=.5\linewidth]{Anaconda_Logo}} 
+\end{minipage}
+
+\vfill
+\begin{minipage}[h]{0.31\linewidth}
+\center{\includegraphics[width=0.5\linewidth]{numpy_logo}} 
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.31\linewidth}
+\center{\includegraphics[width=.85\linewidth]{pandas_logo}} 
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.31\linewidth}
+\center{\includegraphics[width=.5\linewidth]{scipy}} 
+\end{minipage}
+\vfill
+
+\begin{minipage}[h]{0.7\linewidth}
+\center{\includegraphics[width=.5\linewidth]{nplotlib_logos2}} 
+\end{minipage}
+%\caption{инстуременты разработки}
+%\label{ris:experimentalcorrelationsignals}
+\end{figure}
+
+\end{frame}
+
+\section{Заsdfsdf}\label{codfnclusion}
 \begin{frame}[<alignment>]
-\frametitle{Список использованной литератур}
-wiki!!!
+\frametitle{Заключениsdfsе}
+
+sdfasdfasf
+dsaf
+adsf.
+
+
 \end{frame}	
 
+
+\section{Заsdfsdf}\label{codfnclusion}
+\begin{frame}[<alignment>]
+\frametitle{Заключениsdfsе}
+
+sdfasdfasf
+dsaf
+adsf.
+
+
+\end{frame}	
+
+
+
+\setcounter{framenumber}{\value{finalframe}}
 \end{document}
