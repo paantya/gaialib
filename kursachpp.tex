@@ -138,12 +138,12 @@
 \begin{itemize}
   \item Высокая формальная точность Hipparcos и TGAS
   \item Указание на систематические ошибки параллаксов Hipparcos (в том числе, аппарат Hubble, 2007)
-  \item \textbf{Впервые} появилась возможность сравнить параллаксы (ранее только координаты и с.д.) – стандартная астрометрическая задача
+  \item \textbf{Впервые} появилась возможность сравнить параллаксы длябольшого числа звезд (ранее только координаты и с.д.) – стандартная астрометрическая задача
   \end{itemize}
 \end{block}
 \begin{block}{Актуальность}
 \begin{itemize}
-  \item[] Миссия Gaia (TGAS) – в процессе.
+  \item[] Миссия Gaia (TGAS) – в процессе
 \end{itemize}
 \end{block}
 \end{frame}
@@ -168,13 +168,19 @@
   \item 90 283 объекта
   \end{itemize}
 \end{block}  
+\begin{equation}\label{f:prlx} 
+\begin{array}{rl}
+\pi_{dif} = &\pi_{hip} - \pi_{tgas},\\
+\sigma_{dif} = &\sqrt{\sigma^2_{\pi_{hip}} + \sigma^2_{\pi_{tgas}}}
+\end{array}
+\end{equation}
 \end{frame}	
 
 
 \begin{frame}%\frametitle{Введение}
 %\frametitle{Визуализация распределения}
 \begin{figure}[h!]
-\center{\includegraphics[width=.9\linewidth]{hiptgasra}}\\{Распределение звезд из объединённого каталога в экваториальной СК}
+\center{\includegraphics[width=.9\linewidth]{hiptgasra}}\\{Распределение звезд из объединённого каталога на небесной сфере в экваториальной СК}
 %\label{img:hiptgasra}
 \end{figure}
 \end{frame}	
@@ -194,65 +200,12 @@
 \end{figure}
 \end{frame}
 
-%\begin{frame}[<alignment>]
-%\frametitle{}
-%\begin{figure}[h!]
-%\center{\includegraphics[width=.87\linewidth]{hist_par_deff}}
-%\caption{Гистограмма разности параллаксов общего каталога.}
-%\label{img:hist_par_deff}
-%\end{figure}
-%\end{frame}
-
-\section{Случайные выбросы}\label{sub:smthrs}
-
-\begin{frame}
-\frametitle{Случайные выбросы}
-\begin{block}{}
-\begin{itemize}
-  \item[  ] Большие выбросы : звезды, для которых модуль разности превосходит 15 mas (Хаммер-Айтофа, в описании Hipparcos).
-\end{itemize}
-\end{block}
-
-\begin{figure}[h!]
-\center{\includegraphics[width=.57\linewidth]{abs_paralax}}
-\caption{График убывания модуля разностей параллаксов.}
-%\label{img:abs_paralax}
-\end{figure}
-
-\end{frame}
-
-\subsection{Проекция Хаммер-Айтофа}\label{sub:hammer}
-
-\begin{frame}[<alignment>]
-\frametitle{Проекция Хаммер-Айтофа}
-\begin{figure}[h!]
-\center{\includegraphics[width=1.\linewidth]{hammtiss}}
-\label{img:hammtiss}
-\end{figure}
-\end{frame}	
-
-\subsection{Визуализация распределения}\label{sub:smthrs}
-
-\begin{frame}[<alignment>]
-%\frametitle{Случайные выбросы}
-
-\begin{figure}[h!]
-\center{\includegraphics[width=1.\linewidth]{75maxradec}}
-\caption{Распределение рекордсменов в экваториальной СК  Красные - положительные, синие - отрицательные.}
-%\label{img:75maxradec}
-\end{figure}
-\end{frame}
-
-
-
-
-\subsection{Построение и предварительный анализ}\label{errvid}
-
 \begin{frame}[squeeze, shrink=5]
-\frametitle{Построение и предварительный анализ}
+\frametitle{Предварительный анализ}
+Общие статистики по объединённому каталогу
 \begin{table}[h!]
 %\centering
-\caption{Общие статистики по объединённому каталогу}
+%\caption{Общие статистики по объединённому каталогу}
 \label{tabular:tgas_st}
 \begin{tabular}{c|r|r|r|r|r|r|r}
 %\rowcolor{Gray} 
@@ -264,26 +217,81 @@ count&90283&90283&90283&90283&90283&90283&90283\\
 \hline 
 mean&6.812&7.02&0.21&1.07&0.33&1.05&117.48\\
 std&8.564&8.64&1.71&1.35&0.13&0.82&42.86\\
-min&0.002&0.01&-42.35&5.4e-07&0.20&0.09&20\\
+min&0.002&0.01&-42.35&$5.4\cdot10^{-7}$&0.20&0.09&20\\
 25\%&2.506&2.67&-0.61&0.35&0.24&0.68&86\\
-50\%&4.369&4.66&0.14&0.77&0.28&0.91&113\\
+50\%&4.369&4.66&\textbf{0.14}&0.77&0.28&0.91&113\\
 75\%&7.984&8.33&0.93&1.40&0.35&1.21&140\\
-max&295.8&298.0&90.05&90.05&0.99&47.48&388\\
+max&295.8&298.0&\textbf{90.05}&90.05&0.99&47.48&388\\
 \end{tabular}
 \end{table}
 
 \end{frame}	
 
+%\begin{frame}[<alignment>]
+%\frametitle{}
+%\begin{figure}[h!]
+%\center{\includegraphics[width=.87\linewidth]{hist_par_deff}}
+%\caption{Гистограмма разности параллаксов общего каталога.}
+%\label{img:hist_par_deff}
+%\end{figure}
+%\end{frame}
+
+\section{Случайные выбросы}\label{sub:smthrs}
+
+\subsection{Визуализация}\label{sub:vr}
+\begin{frame}[<alignment>]
+\frametitle{Случайные выборсы}
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{hammtiss}}\\{Проекция Хаммер-Айтофа с эллипсами равных площадей}
+\label{img:hammtiss}
+\end{figure}
+\end{frame}	
+
+
+\begin{frame}[<alignment>]
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{b3erra}}\\{Распределение объектов, для которых модуль разности параллаксов больше 3 ошибок, на небесной сфере в экваториальной СК. Красные (1262) - положительные по знаку разности параллаксов, синие (692)- отрицательные.}
+%\label{img:abs_paralax}
+\end{figure}
+\end{frame}	
+
+\begin{frame}[<alignment>]
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{b3sra}}\\{Распределение объектов, для которых модуль разности параллаксов больше 3 среднеквадратических отклонений, в экваториальной СК. Красные (601) - положительные разности параллаксов, синие (272) - отрицательные.}
+%\label{img:abs_paralax}
+\end{figure}
+\end{frame}	
+
+\begin{frame}
+\frametitle{}
+\begin{block}{ Большие выбросы}
+\begin{itemize}
+  \item[  ] Визуализируем звезды, для которых модуль разности превосходит 14.53 mas ($99.9$ перцентиль)
+\end{itemize}
+\end{block}
+
+\begin{figure}[h!]
+\center{\includegraphics[width=.57\linewidth]{hprs999}}\\{Гистограмма выбросов}
+%\label{img:abs_paralax}
+\end{figure}
+\end{frame}
+
+\begin{frame}[<alignment>]
+%\frametitle{Случайные выбросы}
+\begin{figure}[h!]
+\center{\includegraphics[width=1.\linewidth]{h75ra}}\\{Распределение выбросов модуля разности параллаксов экваториальной СК. Красные (81) - положительные по знаку разности параллаксов, синие (9) - отрицательные.}
+\end{figure}
+\end{frame}
 
 
 \section{Систематические различия}\label{sistem}
 
-\subsection{Healpix}\label{sub:smthhealpix}
+\subsection{Healpix}%\label{sub:smthhealpix}
 \begin{frame}[<alignment>]
-\frametitle{HEALPix}
+\frametitle{HEALPix разбиение}
 
 \begin{figure}[h!]
-\center{\includegraphics[width=0.6\linewidth]{healpix}}
+\center{\includegraphics[width=0.5\linewidth]{healpix}}\\{Пимер деления сферы по часовой начиная с верхнего левого на 12, 48, 192 и 768 пикселей}
 \label{img:healpix}
 \end{figure}
 
@@ -301,7 +309,7 @@ max&295.8&298.0&90.05&90.05&0.99&47.48&388\\
 \begin{frame}[<alignment>]
 \frametitle{Распределение}
 \begin{figure}[h!]
-\center{\includegraphics[width=0.7\linewidth]{sf_lo}}\\{Распределение модуля разности параллаксов в эклиптической СК}
+\center{\includegraphics[width=.85\linewidth]{sf_lo}}\\{Распределение среднемедианного модуля разности параллаксов на небесной сфере в эклиптической СК}
 %\caption{Распределение модуля параллаксов в эклиптической СК}
 \label{img:sf_lo}
 \end{figure}
@@ -426,24 +434,31 @@ j = n^2 + 2k + p -1.
 \frametitle{Сферические гармоники}
 
 \begin{figure}[h!]
-\center{\includegraphics[width=1\linewidth]{sf_j}}
-\caption{Гармоники эклиптической СК}
+\center{\includegraphics[width=.85\linewidth]{sf_j_p}}\\{Коэффиценты разложения модуля разности параллаксов по сферическим функциям в эклиптической СК}
 \label{img:sf_j}
 \end{figure}
 \end{frame}	
 
 \begin{frame}[<alignment>]
 \frametitle{Сферические гармоники}
+Статистически значимые коэффициенты разложения модуля разности параллаксов по сферическим функциям в эклиптической СК
 \begin{table}[h]
 \centering
-\caption{Значимые гармоники в эклиптической СК с мат. ожиданием и стандартным отклонением}
-\label{tabular:sf_04}
+%\label{tabular:sf_04}
 \begin{tabular}{|c|c|c|c|}
 \hline 	
-$j$ &$\beta_{j,(lon,lat)}$ & $\mu(\beta_{lon,lat})$ & $\sigma(\beta_{lon,lat})$\\
-\hline 	
-0 &3.8569 &0.0663 &0.5541\\
-4 &-0.5543 &0.0663 &0.5541\\
+$j$ &$\beta_{j}$ & $\sigma$\\
+\hline
+\hline
+0 &	\textbf{2.8978} &0.0130\\
+2 &	0.0497&0.0130\\
+4 &	\textbf{-0.4332}&0.0130\\
+6	&0.1149&0.0130\\
+7	&0.0825&0.0130\\
+16	&-0.0621&0.0130\\
+21	&0.0454&0.0130\\
+22	&-0.0402&0.0130\\
+41	&-0.0558&0.0130\\
 \hline 	
 \end{tabular}
 \end{table}
@@ -452,21 +467,38 @@ $j$ &$\beta_{j,(lon,lat)}$ & $\mu(\beta_{lon,lat})$ & $\sigma(\beta_{lon,lat})$\
 \begin{frame}
 \frametitle{Сферические гармоники}
 \begin{figure}[h!]
-\center{\includegraphics[width=0.97\linewidth]{sfff}}
-\caption{Значимые (0.4) гармоники в эклиптической СК}
-\label{img:sfff}
+\center{\includegraphics[width=0.85\linewidth]{sffff}}\\{Распределение значимых гармоник модуля разности параллаксов по небесной сфере в эклиптической СК}
+%\label{img:sfff}
 \end{figure}
 \end{frame}	
+
+
+\begin{frame}
+\frametitle{Сферические гармоники}
+\begin{figure}[h!]
+\center{\includegraphics[width=0.85\linewidth]{sffff_err}}\\{Распределение значимыхе гармоник ошибки разности параллаксов по небесной сфере в эклиптической СК}
+%\label{img:sfff}
+\end{figure}
+\end{frame}	
+
+
 
 \begin{frame}[<alignment>]
 \frametitle{Сферические гармоники}
 \begin{figure}[h!]
-\center{\includegraphics[width=0.97\linewidth]{nobs}}\\{Распределение числа наблюдения звезд в эклиптической СК}
+\center{\includegraphics[width=0.85\linewidth]{nobs}}\\{Распределение числа наблюдения звезд Hipparcos в эклиптической СК}
 %\caption{}
-\label{img:nobs}
+%\label{img:nobs}
 \end{figure}
 \end{frame}	
 
+\begin{frame}
+\frametitle{Сферические гармоники}
+\begin{figure}[h!]
+\center{\includegraphics[width=0.85\linewidth]{sf_j_dd}}\\{Распределение значимыхе гармоник cреднеквадратичного отклонения разности параллаксов по небесной сфере в эклиптической СК}
+%\label{img:sfff}
+\end{figure}
+\end{frame}	
 
 \section{Заключение}\label{conclusion}
 \begin{frame}
@@ -474,26 +506,15 @@ $j$ &$\beta_{j,(lon,lat)}$ & $\mu(\beta_{lon,lat})$ & $\sigma(\beta_{lon,lat})$\
 
 \begin{block}{}
 \begin{itemize}
-  \item Звезды по HIP ближе на $6\%$.
-  \item Cсистематически параллаксы сильно не различаются -- TGAS использовались первые эпохи из Hipparcos и Tycho-2 -- видимо данные с ними коррелированны.
-\end{itemize}
+  \item Звезды по Hipparcos ближе на $6\%$.
+  \item Выявлены выбросы -- «рекордсмены» -- звезды с явно разными параллаксами.
+  \item Результаты Hipparcos принимались за абсолютную истину, хотя были факты, указывающие на резкое противоречие с данными наземных наблюдений.
+  \item Выявление сист. ошибок – только сравнение с другими каталогами, полученными незваисимо. 
+  \item Cистематически параллаксы сильно не различаются  
+  \item Закономерность в распределении модуля отклонения разности параллаксов -- закон вращения спутника Hipparcos -- в TGAS использовались данные из Hipparcos.
+  \end{itemize}
 \end{block}
 \end{frame}	
-
-\begin{frame}
-\frametitle{Заключение}
- Результаты Hipparcos принимались за абсолютную истину, хотя были факты, указывающие на резкое противоречие с данными наземных наблюдений. Выявление сист. ошибок – только сравнение с другими каталогами, полученными незваисимо. Кроме того выявлены «рекордсмены» - звезды с явно разными параллаксами.
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Спасибо за внимание!}
-\begin{figure}[h!]
-\center{\includegraphics[width=1\linewidth]{alllv}}
-%\caption{Гармоники эклиптической СК}
-\label{img:alllv}
-\end{figure}
-\end{frame}
 
 %\setcounter{framenumber}{0} %or \setcounter{framenumber}{1}
 
@@ -501,6 +522,15 @@ $j$ &$\beta_{j,(lon,lat)}$ & $\mu(\beta_{lon,lat})$ & $\sigma(\beta_{lon,lat})$\
 \appendix
 \newcounter{finalframe}
 \setcounter{finalframe}{\value{framenumber}}
+
+\begin{frame}
+\frametitle{Спасибо за внимание!}
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{GDR2_fluxRGB_hammer_4000x2000}}
+%\caption{Гармоники эклиптической СК}
+\label{img:alllv}
+\end{figure}
+\end{frame}
 
 \begin{frame}
 \section{Список использованной литературы}\label{conclusionlit}
@@ -575,8 +605,7 @@ $j$ &$\beta_{j,(lon,lat)}$ & $\mu(\beta_{lon,lat})$ & $\sigma(\beta_{lon,lat})$\
 \begin{frame}[<alignment>]
 %\frametitle{Визуализация распределения}
 \begin{figure}[h!]
-\center{\includegraphics[width=1\linewidth]{hiptgasl}}
-\caption{Распределение в галлактической СК}
+\center{\includegraphics[width=1\linewidth]{hiptgasl}}\\{Распределение в галлактической СК}
 \label{img:hiptgasl}
 \end{figure}
 \end{frame}	
@@ -584,8 +613,7 @@ $j$ &$\beta_{j,(lon,lat)}$ & $\mu(\beta_{lon,lat})$ & $\sigma(\beta_{lon,lat})$\
 \begin{frame}[<alignment>]
 %\frametitle{Визуализация распределения}
 \begin{figure}[h!]
-\center{\includegraphics[width=1.\linewidth]{hiptgaslo}}
-\caption{Распределение в эклиптической СК}
+\center{\includegraphics[width=1.\linewidth]{hiptgaslo}}\\{Распределение в эклиптической СК}
 \label{img:hiptgaslo}
 \end{figure}
 \end{frame}	
@@ -595,8 +623,7 @@ $j$ &$\beta_{j,(lon,lat)}$ & $\mu(\beta_{lon,lat})$ & $\sigma(\beta_{lon,lat})$\
 \begin{frame}[<alignment>]
 %\frametitle{Случайные выбросы}
 \begin{figure}[h!]
-\center{\includegraphics[width=1.\linewidth]{75maxlb}}
-\caption{Распределение рекордсменов в галактической СК Красные - положительные, синие - отрицательные.}
+\center{\includegraphics[width=1.\linewidth]{75maxlb}}\\{Распределение рекордсменов в галактической СК Красные - положительные, синие - отрицательные.}
 \label{img:75maxlb}
 \end{figure}
 \end{frame}
@@ -604,29 +631,108 @@ $j$ &$\beta_{j,(lon,lat)}$ & $\mu(\beta_{lon,lat})$ & $\sigma(\beta_{lon,lat})$\
 \begin{frame}[<alignment>]
 %\frametitle{Случайные выбросы}
 \begin{figure}[h!]
-\center{\includegraphics[width=1.\linewidth]{75maxlonlat}}
-\caption{Распределение рекордсменов в эклиптической СК Красные - положительные, синие - отрицательные.}
+\center{\includegraphics[width=1.\linewidth]{75maxlonlat}}\\{Распределение рекордсменов в эклиптической СК Красные - положительные, синие - отрицательные.}
 \label{img:75maxlonlat}
 \end{figure}
 \end{frame}	
 
 \begin{frame}[<alignment>]
-\frametitle{Распределение разностей паралаксов}
+\frametitle{Распределени}
 \begin{figure}[h!]
-\center{\includegraphics[width=0.7\linewidth]{sf_ra}}
-\caption{Распределение модуля параллаксов в экваториальной СК }
+\center{\includegraphics[width=0.7\linewidth]{sf_ra}}\\{Распределение модуля параллаксов в экваториальной СК }
 \label{img:sf_ra}
 \end{figure}
 \end{frame}	
 
 \begin{frame}[<alignment>]
-\frametitle{Распределение разностей паралаксов}
+\frametitle{Распределение}
 \begin{figure}[h!]
-\center{\includegraphics[width=0.7\linewidth]{sf_l}}
-\caption{Распределение модуля параллаксов в галактической СК}
+\center{\includegraphics[width=0.7\linewidth]{sf_l}}\\{Распределение модуля параллаксов в галактической СК}
 \label{img:sf_l}
 \end{figure}
 
+\end{frame}	
+\begin{frame}
+\frametitle{Сферические гармоники}
+\begin{figure}[h!]
+\center{\includegraphics[width=0.85\linewidth]{sf_j_err}}\\{Коэффиценты разложения ошибки разности параллаксов на сферические функции по небесной сфере в эклиптической СК}
+%\label{img:sfff}
+\end{figure}
+
+\end{frame}	
+\begin{frame}
+Статистически значимые коэффициенты разложения ошибки разности параллаксов по сферическим функциям в эклиптической СК
+\begin{table}[h]
+\centering
+%\label{tabular:sf_04}
+\begin{tabular}{|c|c|c|c|}
+\hline 	
+$j$ &$\beta_{j}$ & $\sigma$\\
+\hline
+\hline
+0&	\textbf{3.5745} &0.0079\\
+1&	-0.0313 & 0.0079\\
+2&	0.0656 & 0.0079\\
+4	&\textbf{-0.4918}  &0.0079\\
+5&	-0.0599  &0.0079\\
+6&	0.1862  &0.0079\\
+7&	0.0918  &0.0079\\
+8&	-0.0377  &0.0079\\
+16&	-0.1522  &0.0079\\
+18&	-0.0673  &0.0079\\
+\hline 	
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+Статистически значимые коэффициенты разложения ошибки разности параллаксов по сферическим функциям в эклиптической СК
+\begin{table}[h]
+\centering
+%\label{tabular:sf_04}
+\begin{tabular}{|c|c|c|c|}
+\hline 	
+$j$ &$\beta_{j}$ & $\sigma$\\
+\hline
+\hline
+20&	0.0476  &0.0079\\
+22&	-0.0266  &0.0079\\
+23&	-0.0557  &0.0079\\
+35&	-0.026  &0.0079\\
+37&	0.0257  &0.0079\\
+41&	-0.071 &0.0079\\
+42&	0.0294  &0.0079\\
+43&	0.0424  &0.0079\\
+44&	-0.033  &0.0079\\
+\hline 	
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Сферические гармоники}
+\begin{figure}[h!]
+\center{\includegraphics[width=0.85\linewidth]{sf_j_d}}\\{Коэффиценты разложения среднеквадратичного отклонения разности параллаксов на сферические функции в эклиптической СК}
+%\label{img:sfff}
+\end{figure}
+\end{frame}	
+
+\begin{frame}[<alignment>]
+\frametitle{Сферические гармоники}
+Статистически значимые коэффициенты разложения cреднеквадратичного отклонения разности параллаксов по сферическим функциям в эклиптической СК
+\begin{table}[h]
+\centering
+%\label{tabular:sf_04}
+\begin{tabular}{|c|c|c|c|}
+\hline 	
+$j$ &$\beta_{j}$ & $\sigma$\\
+\hline
+\hline
+0	&\textbf{4.036} & 0.0692\\
+4	&\textbf{-0.4998} & 0.0692\\
+\hline 	
+\end{tabular}
+\end{table}
 \end{frame}	
 
 \setcounter{framenumber}{\value{finalframe}}
